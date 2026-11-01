@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>افتتاح كشك مؤقت ذا وير هاوس 2 - الماجد للعود</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap');
+  :root {
+    --brown:#482719; --deep:#24160f; --gold:#c9a45c; --light-gold:#edcc82;
+    --cream:#fffaf0; --ink:#302219; --muted:#806d5e;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; padding:32px 16px; background:#eee9e2; color:var(--ink);
+    font-family:"Cairo",Tahoma,Arial,sans-serif;
+  }
+  .page {
+    position:relative; max-width:900px; margin:auto; overflow:hidden;
+    background:var(--cream); border:1px solid #dfd0b9; border-radius:22px;
+    box-shadow:0 18px 55px rgba(36,22,15,.13);
+  }
+  .top-line { height:9px; background:linear-gradient(90deg,var(--deep),var(--gold),var(--brown)); }
+  header { padding:28px 42px 20px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+  .logo { width:178px; max-width:36%; height:auto; object-fit:contain; }
+  .brand-note { color:var(--muted); font-size:13px; font-weight:700; letter-spacing:.3px; }
+  .hero {
+    margin:0 30px; padding:30px 24px; text-align:center; color:#fff;
+    background:radial-gradient(circle at 50% 0%,#6c422b 0%,var(--brown) 48%,var(--deep) 100%);
+    border-radius:18px; position:relative; overflow:hidden;
+  }
+  .hero:before,.hero:after {
+    content:""; position:absolute; width:170px; height:170px; border:1px solid rgba(237,204,130,.24);
+    border-radius:50%; top:-105px;
+  }
+  .hero:before { right:-45px; } .hero:after { left:-45px; }
+  .eyebrow { color:var(--light-gold); font-size:14px; font-weight:700; }
+  h1 { margin:8px 0 4px; font-size:clamp(25px,4vw,36px); font-weight:900; }
+  .subtitle { color:#f5e8d1; font-size:16px; font-weight:600; }
+  .branch-code {
+    display:inline-block; margin-top:17px; padding:7px 22px; border:1px solid var(--gold);
+    border-radius:30px; color:var(--light-gold); font-weight:800; font-size:15px;
+  }
+  .content { padding:28px 42px 38px; }
+  .greeting { font-size:17px; font-weight:800; margin:0 0 10px; }
+  .intro { line-height:2; margin:0 0 22px; font-size:15px; }
+  .date-strip {
+    display:flex; align-items:center; justify-content:center; gap:10px; flex-wrap:wrap;
+    background:#f4ead8; border:1px solid #e4d2b3; padding:13px 16px; border-radius:12px;
+    margin-bottom:25px; font-weight:800; color:var(--brown);
+  }
+  .date-strip span { color:var(--muted); font-weight:600; }
+  .section-title {
+    display:flex; align-items:center; gap:10px; margin:25px 0 13px; color:var(--brown);
+    font-size:18px; font-weight:900;
+  }
+  .section-title:after { content:""; height:1px; flex:1; background:#dfcfb6; }
+  .cards { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px; }
+  .info-card {
+    background:#fff; border:1px solid #eadfce; border-radius:13px; padding:16px 18px;
+  }
+  .info-card h3 { margin:0 0 11px; color:var(--brown); font-size:15px; font-weight:900; }
+  .field { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:6px 0; border-bottom:1px dashed #eee5d8; font-size:13px; }
+  .field:last-child { border-bottom:0; }
+  .field span { color:var(--muted); white-space:nowrap; }
+  .field strong { text-align:left; direction:rtl; font-weight:700; overflow-wrap:anywhere; }
+  .hours { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .hours-item { padding:15px; background:#fff; border:1px solid #eadfce; border-radius:12px; }
+  .hours-item strong { display:block; color:var(--brown); margin-bottom:5px; font-size:14px; }
+  .hours-item span { font-size:14px; font-weight:700; }
+  .address {
+    padding:14px 17px; background:#fff; border:1px solid #eadfce; border-radius:12px;
+    line-height:1.9; font-size:14px;
+  }
+  .map-link {
+    display:inline-flex; align-items:center; justify-content:center; gap:8px; margin-top:12px;
+    padding:10px 20px; background:var(--brown); color:#fff; text-decoration:none;
+    border-radius:9px; font-size:14px; font-weight:800; transition:.2s;
+  }
+  .map-link:hover { background:var(--deep); transform:translateY(-1px); }
+  .closing { text-align:center; margin:28px 0 0; padding:19px 12px 0; border-top:1px solid #e5d7c3; color:var(--brown); font-weight:800; line-height:2; }
+  footer { text-align:center; padding:13px; background:#f3eadc; color:#806d5e; font-size:11px; }
+  @media(max-width:650px) {
+    body { padding:12px 8px; } header { padding:20px; } .content { padding:22px 18px 28px; }
+    .hero { margin:0 14px; padding:25px 14px; } .cards,.hours { grid-template-columns:1fr; }
+    .logo { width:145px; } .brand-note { font-size:11px; }
+  }
+  @media print {
+    body { background:#fff; padding:0; } .page { box-shadow:none; border:0; max-width:none; }
+    .map-link { color:#fff !important; } @page { size:A4; margin:10mm; }
+  }
+</style>
+</head>
+<body>
+<main class="page">
+  <div class="top-line"></div>
+  <header>
+    <img class="logo" src="data:image/png;base64,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" alt="شعار الماجد للعود">
+    <div class="brand-note">إعلانات وافتتاحات الفروع</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow"></div>
+    <h1>افتتاح كشك مؤقت ذا وير هاوس 2</h1>
+    <div class="subtitle">دولة الكويت</div>
+    <div class="branch-code">كود الكشك: 2038</div>
+  </section>
+
+  <section class="content">
+    <p class="greeting">السادة / المحترمين</p>
+    <p class="intro">تحية طيبة وبعد،،،<br>
+      نحيطكم علمًا بأنه تم – وبحمد الله تعالى – افتتاح <strong>فرع ذا وير هاوس 2</strong> بدولة الكويت،
+      .
+    </p>
+
+    <div class="date-strip">
+      <span>تاريخ الافتتاح :</span> 1 نوفمبر 2026م <span>حتى</span> 31 ديسمبر 2026م
+    </div>
+
+    <div class="section-title">بيانات الفرع </div>
+    <div class="cards">
+      <article class="info-card">
+        <h3>أمين العهدة</h3>
+        <div class="field"><span>الاسم</span><strong>ياسر حمدي عبدالحميد</strong></div>
+        <div class="field"><span>الرقم الوظيفي</span><strong>14878</strong></div>
+        <div class="field"><span>رقم الجوال</span><strong dir="ltr">0096551600415</strong></div>
+      </article>
+      <article class="info-card">
+        <h3>مشرف الفرع</h3>
+        <div class="field"><span>الاسم</span><strong>عبدالرحمن حسن منعم</strong></div>
+        <div class="field"><span>الرقم الوظيفي</span><strong>1207</strong></div>
+        <div class="field"><span>رقم الجوال</span><strong dir="ltr">0096555578476</strong></div>
+      </article>
+    </div>
+
+    <div class="section-title">عنوان الفرع</div>
+    <div class="address">الصباحية – دولة الكويت</div>
+
+    <div class="section-title">مواعيد العمل</div>
+    <div class="hours">
+      <div class="hours-item">
+        <strong>الأحد إلى الأربعاء</strong>
+        <span>10:00 صباحًا – 10:00 مساءً</span>
+      </div>
+      <div class="hours-item">
+        <strong>الخميس والجمعة والسبت</strong>
+        <span>10:00 صباحًا – 11:00 مساءً</span>
+      </div>
+    </div>
+
+    <div class="section-title">موقع الفرع</div>
+    <div class="address">
+      يمكنكم الوصول إلى موقع الفرع عبر خرائط Google.
+      <br>
+      <a class="map-link" href="https://maps.app.goo.gl/dFpwdVdyaREW6fDs7?g_st=ic" target="_blank" rel="noopener noreferrer">
+        <span>عرض موقع الفرع على الخريطة</span> <span aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="closing">سائلين المولى عز وجل دوام التوفيق والنجاح،،،</div>
+  </section>
+  <footer>Almajed Oud | الماجد للعود</footer>
+</main>
+</body>
+</html>
